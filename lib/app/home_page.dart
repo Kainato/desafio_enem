@@ -1,25 +1,36 @@
 import 'dart:developer';
+
+import 'package:desafio_enem/config/app_routes.dart';
+import 'package:desafio_enem/layouts/scaffold_base.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
+    return ScaffoldBase(
+      title: 'Página Inicial',
+      hasDrawer: true,
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            _makeHttpRequest();
+          },
+          child: const Text('Fazer requisição HTTP'),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _makeHttpRequest();
+          Navigator.pushNamed(context, AppRoutes.settings.route);
         },
-        child: const Text('Make HTTP Request'),
+        child: const Icon(Icons.settings),
       ),
     );
   }
 }
-
 
 Future<Response> _makeHttpRequest() async {
   final Response response =
