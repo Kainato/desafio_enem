@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: routes,
-      initialRoute: '/home',
+      // initialRoute: '/home',
       title: 'Desafio ENEM',
       locale: const Locale('pt', 'BR'),
       themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,

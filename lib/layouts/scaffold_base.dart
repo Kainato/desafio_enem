@@ -18,6 +18,9 @@ class ScaffoldBase extends StatelessWidget {
   /// Ações que aparecem no canto direito da appbar
   final List<Widget>? actions;
 
+  /// Barra de navegação inferior
+  final Widget? bottomNavigationBar;
+
   /// Um scaffold base para ser usada em todas as telas
   const ScaffoldBase({
     super.key,
@@ -26,6 +29,7 @@ class ScaffoldBase extends StatelessWidget {
     required this.body,
     this.actions,
     this.floatingActionButton,
+    this.bottomNavigationBar,
   });
 
   @override
@@ -35,6 +39,7 @@ class ScaffoldBase extends StatelessWidget {
       drawer: hasDrawer ? const DrawerBase() : null,
       body: SafeArea(minimum: const EdgeInsets.all(16), child: body),
       floatingActionButton: floatingActionButton,
+      bottomNavigationBar: bottomNavigationBar,
     );
   }
 }

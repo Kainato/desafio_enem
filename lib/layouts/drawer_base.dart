@@ -20,11 +20,11 @@ class DrawerBase extends StatelessWidget implements Drawer {
               children: [
                 DrawerHeader(
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          AppMedia(context).isotipoTransparente.toString()),
-                      fit: BoxFit.contain,
-                    ),
+                    // image: DecorationImage(
+                    //   image: AssetImage(
+                    //       AppMedia(context).isotipoTransparente.toString()),
+                    //   fit: BoxFit.contain,
+                    // ),
                     color: AppTheme(context).backgroundLogo,
                   ),
                   child: Container(),
